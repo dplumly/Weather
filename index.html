@@ -25,8 +25,9 @@
         <div id="weather"></div>
     </section>
 
-    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js'></script>
+
 
     <script>
         $(document).ready(function() {  
@@ -36,7 +37,7 @@
 
     function getWeather() {
         $.simpleWeather({
-        location: '90045',
+        location: '90755',
         unit: 'f',
         success: function(weather) {
         html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
@@ -45,7 +46,7 @@
         html += '<li class="currently">'+weather.currently+'</li>';
         html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';
 
-        for(var i=0;i<weather.forecast.length;i++) {
+        for(var i=0;i<weather.forecast.length -5; i++) {
                 html += '<p>'+weather.forecast[i].day+': '+weather.forecast[i].high+'</p>';
               }
   
